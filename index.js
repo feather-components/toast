@@ -10,7 +10,7 @@ if(typeof define == 'function' && define.amd){
         require('mask')
     );
 }else{
-    window.jQuery.toast = factory(window.jQuery, window.jQuery.klass, window.jQuery.overlay, window.jQuery.fn.mask);
+    factory(window.jQuery, window.jQuery.klass, window.jQuery.overlay, window.jQuery.fn.mask);
 }
 })(function($, Class, Overlay, Mask){
 var Toast = Class.extend(Overlay, {
@@ -79,6 +79,6 @@ $.each(['success', 'error', 'notice', 'loading'], function(index, item){
     };
 });
 
-return Toast;
+return $.toast = Toast;
 
 });
